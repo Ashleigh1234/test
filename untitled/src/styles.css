@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+.frame {
+  width: 300px;
+  height: 250px;
+  border: 3px solid #ccc;
+  background: #eee;
+  margin: auto;
+  padding: 15px 10px;
+}
+
+img {
+  width: 100%;
+  height: 90%;
+}
+.circleBase {
+  border-radius: 50%;
+}
+
+.type1 {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border: 0.20px solid grey;
+}
+p.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+i.accordion , p.accordion {
+  background-color: #ddd;
+}
+ul {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+}

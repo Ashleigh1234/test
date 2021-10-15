@@ -1,0 +1,73 @@
+<!--<div class="box box-info" *ngFor="let item of heroes; let x = index"> &lt;!&ndash; make loop for draw forms &ndash;&gt;-->
+<!--  <div class="box-header with-border">-->
+<!--    <h3 class="box-title"><span *ngIf="item.hasChildren" class="fa fa-sign-out"></span> {{item.firstName}}</h3>-->
+
+<!--    <div class="box-tools pull-right">-->
+<!--      <a class="btn btn-box-tool" data-widget="collapse" (click)="toggle(x)">-->
+<!--        &lt;!&ndash; use colapse[x] to change minus to plus &ndash;&gt;-->
+<!--        <i class="fa" [ngClass]="{'fa-minus': colapse[x], 'fa-plus': !colapse[x]  }"></i>-->
+<!--      </a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  &lt;!&ndash; show/hide div &ndash;&gt;-->
+<!--  <div class="box-body" *ngIf="colapse[x]">-->
+<!--    <div class="table-responsive">-->
+<!--      <table class="table no-margin">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--          <th>numbering</th>-->
+<!--          <th>description</th>-->
+<!--          <th>value</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr *ngFor="let setting of item.heroes; let i = index" >-->
+<!--          <td>{{i + 1}}</td>-->
+<!--          <td>{{setting.description}}</td>-->
+<!--          <td class="col-lg-3 col-md-4">-->
+<!--            <input type="text" class="form-control" [(ngModel)]="setting.value" name="value" #ngvalue="ngModel"  value="{{setting.firstName}}">-->
+<!--          </td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--      </table>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<div>
+  <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchName" >
+<!--  <button (click)="toggle()" id="bt">-->
+<!--    {{buttonName}}-->
+<!--  </button>-->
+  <div *ngFor="let students of heroes | filter:searchName">
+    <table>
+    <tr>
+      <!--<td>{{}}</td>-->
+      <td><div class="circleBase type1" style=" float: left;"><img [src]="students.pic"></div></td>
+    </tr>
+    <div style="margin-left: 100px;">
+      <tr>
+        <td><b>{{students.firstName}} {{students.lastName}}</b></td>
+      <tr>
+        <td>Email: {{students.email}}</td>
+      </tr>
+      <tr>
+        <td>Company: {{students.company}}</td>
+      </tr>
+      <tr>
+        <td>Skill: {{students.skill}}</td>
+      </tr>
+      <ng-container *ngIf="show">
+      <tr>
+        <td>Average: {{students.grades}}</td>
+      </tr>
+      </ng-container>
+    </div>
+    <hr>
+    </table>
+  </div>
+</div>
+
+
+  <!--`<div *ngIf="heroes && heroes.length > 0">-->
+  <!--{{heroes[0].name}}-->
+  <!--</div>`-->
